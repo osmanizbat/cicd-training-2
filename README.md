@@ -21,25 +21,7 @@ Bu eğitimde [cicd-training-1](https://github.com/osmanizbat/cicd-training-1) ve
     exit
     ~~~    
 
+5. https://dl.k8s.io/release/v1.26.0/bin/windows/amd64/kubectl.exe adresinden indirdiğimiz dosyayı 4. adımda olıuşturduğumuz bin dizinine kaydediyoruz.
 
-# app-server sunucusuna Minikube kurulumu
+6. https://get.helm.sh/helm-v3.10.3-windows-amd64.zip adresinden indirdiğimiz dosyanın içerisinde bulunan helm.exe'yi 4. adımda oluşturduğumuz bin dizinine kaydediyoruz.
 
-1. __app-server__ makinesi kapalıyken Virtualbox makine ayarlarında CPU 2'ye, Memory 4096 MB'a çıkarılarak makine başlatılır. 
-
-2. Paket kurulumu yapılarak minikube başlatılır:
-    ~~~
-    curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
-    sudo dpkg -i minikube_latest_amd64.deb
-    minikube start
-    ~~~
-    
-3. kubectl komutuyla local clusterımızda çalışan podları listeliyoruz: 
-    ~~~
-    minikube kubectl -- get pods -A
-    ~~~
-
-4. kubectl komutunu daha pratik kullanabilmek için alias tanımlıyoruz:
-    ~~~
-    echo 'alias kubectl="minikube kubectl --"' >>  ~/.bash_aliases
-    source ~/.bash_aliases
-    ~~~
